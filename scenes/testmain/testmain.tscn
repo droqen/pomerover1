@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://boysvtiuhofva"]
+
+[ext_resource type="Theme" uid="uid://cogmds6l2rn68" path="res://scenes/testmain/testmain_theme.tres" id="1_8kxht"]
+[ext_resource type="Script" path="res://scenes/testmain/testmain_script.gd" id="1_qdrn1"]
+
+[node name="Testmain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8kxht")
+
+[node name="m" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="c" type="CenterContainer" parent="m"]
+layout_mode = 2
+
+[node name="v" type="VBoxContainer" parent="m/c"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="text" type="Label" parent="m/c/v"]
+layout_mode = 2
+text = "This label is a test.
+I want it to be printed nicely.
+The text will scroll freely.
+And then you will choose."
+horizontal_alignment = 1
+visible_characters_behavior = 1
+
+[node name="options" type="VBoxContainer" parent="m/c/v"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="opt1" type="Button" parent="m/c/v/options"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Choose"
+
+[node name="opt2" type="Button" parent="m/c/v/options"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Choose"
+
+[node name="opt3" type="Button" parent="m/c/v/options"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Choose"
+
+[node name="opt4" type="Button" parent="m/c/v/options"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Choose"
+
+[node name="testmain_script" type="Node" parent="." node_paths=PackedStringArray("text_and_options_parent")]
+script = ExtResource("1_qdrn1")
+text_and_options_parent = NodePath("../m/c/v")
